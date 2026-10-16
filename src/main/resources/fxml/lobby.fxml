@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+
+<StackPane fx:id="viewport" styleClass="viewport" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.untildawn.controller.LobbyController">
+    <Group>
+        <AnchorPane fx:id="design" prefWidth="1280" prefHeight="720"
+                    minWidth="1280" minHeight="720" maxWidth="1280" maxHeight="720">
+            <ImageView fitWidth="1280" fitHeight="720" mouseTransparent="true" smooth="true">
+                <image><Image url="@../images/ui/lobby-hall.png"/></image>
+            </ImageView>
+            <Region styleClass="left-shade" prefWidth="1280" prefHeight="720" mouseTransparent="true"/>
+            <Region styleClass="bottom-shade" prefWidth="1280" prefHeight="200"
+                    AnchorPane.bottomAnchor="0" mouseTransparent="true"/>
+            <Canvas fx:id="staticCanvas" width="1280" height="720" mouseTransparent="true"/>
+
+            <AnchorPane fx:id="lobbyContent" prefWidth="1280" prefHeight="720">
+                <Pane styleClass="camera-frame" mouseTransparent="true"
+                      AnchorPane.topAnchor="26" AnchorPane.rightAnchor="26"
+                      AnchorPane.bottomAnchor="26" AnchorPane.leftAnchor="26"/>
+
+                <HBox layoutX="55" layoutY="46" spacing="10" alignment="CENTER_LEFT">
+                    <Circle radius="3" styleClass="recording-dot"/>
+                    <Label text="REC" styleClass="recording-label"/>
+                    <Label text="—  LIVE FEED" styleClass="camera-label"/>
+                </HBox>
+                <VBox alignment="TOP_RIGHT" spacing="5" AnchorPane.rightAnchor="56" layoutY="44">
+                    <Label text="CAM 01" styleClass="camera-name"/>
+                    <Label text="MAIN HALL" styleClass="camera-label"/>
+                </VBox>
+
+                <Label layoutX="86" layoutY="123" text="A SINGLE-NIGHT SURVIVAL HORROR" styleClass="eyebrow"/>
+                <VBox layoutX="80" layoutY="153" spacing="-24">
+                    <Label text="UNTIL" styleClass="game-title"/>
+                    <Label text="DAWN" styleClass="game-title"/>
+                </VBox>
+                <Label layoutX="87" layoutY="359" text="ONE NIGHT. THREE PRESENCES." styleClass="tagline"/>
+                <Region layoutX="87" layoutY="404" prefWidth="44" prefHeight="2" styleClass="accent-rule"/>
+
+                <VBox layoutX="80" layoutY="426" spacing="5" fillWidth="false">
+                    <Button fx:id="newGameButton" text="NEW GAME" onAction="#handleNewGame"
+                            styleClass="menu-button" graphicTextGap="18" mnemonicParsing="false">
+                        <graphic><Label text="»" styleClass="menu-marker"/></graphic>
+                    </Button>
+                    <Button fx:id="settingsButton" text="SETTINGS" onAction="#openSettings"
+                            styleClass="menu-button" graphicTextGap="18" mnemonicParsing="false">
+                        <graphic><Label text="»" styleClass="menu-marker"/></graphic>
+                    </Button>
+                </VBox>
+                <Label layoutX="120" layoutY="563" text="NIGHT 01   /   12 AM — 6 AM" styleClass="night-caption"/>
+
+                <VBox alignment="BOTTOM_RIGHT" spacing="6" AnchorPane.rightAnchor="56" AnchorPane.bottomAnchor="82">
+                    <Label text="THE SHIFT STARTS AT" styleClass="clock-caption"/>
+                    <Label text="12:00 AM" styleClass="lobby-clock"/>
+                </VBox>
+                <HBox spacing="24" layoutX="56" AnchorPane.bottomAnchor="46">
+                    <Label text="↑ ↓  SELECT" styleClass="footer-label"/>
+                    <Label text="ENTER  CONFIRM" styleClass="footer-label"/>
+                    <Label text="F11  FULLSCREEN" styleClass="footer-label"/>
+                </HBox>
+                <Label text="UNTIL DAWN  /  v0.1" styleClass="footer-label"
+                       AnchorPane.rightAnchor="56" AnchorPane.bottomAnchor="46"/>
+            </AnchorPane>
+
+            <StackPane fx:id="settingsLayer" visible="false" styleClass="modal-shade"
+                       AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0"
+                       AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0">
+                <VBox styleClass="settings-panel" spacing="0" maxWidth="560" maxHeight="430">
+                    <Label text="UNTIL DAWN / PREFERENCES" styleClass="eyebrow"/>
+                    <Label text="SETTINGS" styleClass="panel-title"/>
+                    <Region prefHeight="22"/>
+                    <HBox styleClass="setting-row" alignment="CENTER_LEFT" spacing="20">
+                        <VBox spacing="6" HBox.hgrow="ALWAYS">
+                            <Label text="FULLSCREEN" styleClass="setting-name"/>
+                            <Label text="Fill the screen. Toggle anytime with F11." styleClass="setting-description"/>
+                        </VBox>
+                        <CheckBox fx:id="fullScreenToggle" accessibleText="Fullscreen"/>
+                    </HBox>
+                    <HBox styleClass="setting-row" alignment="CENTER_LEFT" spacing="20">
+                        <VBox spacing="6" HBox.hgrow="ALWAYS">
+                            <Label text="ANALOG EFFECTS" styleClass="setting-name"/>
+                            <Label text="Subtle scanlines and moving film grain." styleClass="setting-description"/>
+                        </VBox>
+                        <CheckBox fx:id="effectsToggle" accessibleText="Analog effects"/>
+                    </HBox>
+                    <Region VBox.vgrow="ALWAYS" minHeight="20"/>
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="ESC TO RETURN" styleClass="footer-label" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                        <Button fx:id="doneButton" text="DONE  →" onAction="#closeSettings" styleClass="outline-button"/>
+                    </HBox>
+                </VBox>
+            </StackPane>
+        </AnchorPane>
+    </Group>
+</StackPane>
