@@ -1,0 +1,126 @@
+.root {
+    -fx-font-family: "Monospaced";
+    -fx-font-smoothing-type: gray;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.viewport { -fx-background-color: #050605; }
+.label { -fx-text-fill: #e9e7dc; }
+.left-shade {
+    -fx-background-color: linear-gradient(to right, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.1) 52%, transparent);
+}
+.bottom-shade {
+    -fx-background-color: linear-gradient(to bottom, transparent, rgba(3, 5, 4, 0.87));
+}
+.camera-frame {
+    -fx-border-color: rgba(199, 205, 183, 0.18);
+    -fx-border-width: 1;
+}
+.recording-dot { -fx-fill: #b95043; }
+.recording-label {
+    -fx-text-fill: #c47a69;
+    -fx-font-size: 11px;
+}
+.camera-label, .camera-name {
+    -fx-text-fill: #a4a69a;
+    -fx-font-size: 11px;
+}
+.camera-name { -fx-font-size: 16px; }
+.eyebrow {
+    -fx-text-fill: #a7a68d;
+    -fx-font-size: 11px;
+}
+.game-title {
+    -fx-font-size: 94px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e9e7dc;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(220, 222, 195, 0.15), 7, 0, 2, 0);
+}
+.tagline {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9b9d90;
+}
+.accent-rule { -fx-background-color: #a8a17a; }
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 8 18 8 0;
+    -fx-text-fill: #aaa99b;
+    -fx-font-size: 27px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-width: 1;
+    -fx-border-radius: 0;
+}
+.menu-marker {
+    -fx-opacity: 0;
+    -fx-min-width: 24;
+    -fx-text-fill: #ddd5ae;
+    -fx-font-size: 27px;
+}
+.menu-button:hover, .menu-button:focused {
+    -fx-text-fill: #f8f5e7;
+    -fx-effect: dropshadow(gaussian, rgba(226, 225, 191, 0.23), 9, 0, 0, 0);
+}
+.menu-button:hover .menu-marker, .menu-button:focused .menu-marker { -fx-opacity: 1; }
+.menu-button:pressed { -fx-text-fill: #b1ab8d; }
+.night-caption { -fx-font-size: 11px; -fx-text-fill: #919487; }
+.clock-caption { -fx-font-size: 10px; -fx-text-fill: #9a9d90; }
+.lobby-clock { -fx-font-size: 34px; -fx-text-fill: #c5c6b7; }
+.footer-label { -fx-font-size: 10px; -fx-text-fill: #8b8e80; }
+
+.modal-shade { -fx-background-color: rgba(0, 0, 0, 0.78); }
+.settings-panel {
+    -fx-background-color: #10130f;
+    -fx-border-color: #4e5341;
+    -fx-border-width: 1;
+    -fx-padding: 34 38 32 38;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.8), 50, 0.3, 0, 8);
+}
+.panel-title {
+    -fx-font-size: 33px;
+    -fx-padding: 9 0 0 0;
+}
+.setting-row {
+    -fx-padding: 18 0;
+    -fx-border-color: #2b3026 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+.setting-name { -fx-font-size: 14px; -fx-text-fill: #e0dfcf; }
+.setting-description { -fx-font-size: 10px; -fx-text-fill: #9b9f8f; }
+.check-box { -fx-cursor: hand; -fx-padding: 6; }
+.check-box .box {
+    -fx-background-color: #171b14;
+    -fx-border-color: #747963;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-padding: 5;
+}
+.check-box .mark { -fx-padding: 5; }
+.check-box:selected .mark { -fx-background-color: #dedbb5; }
+.check-box:focused .box, .check-box:hover .box { -fx-border-color: #e6e4c7; }
+.outline-button {
+    -fx-font-size: 12px;
+    -fx-text-fill: #d6d5c1;
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-color: #646a54;
+    -fx-border-radius: 0;
+    -fx-padding: 12 18;
+    -fx-cursor: hand;
+}
+.outline-button:hover, .outline-button:focused {
+    -fx-background-color: #252b20;
+    -fx-border-color: #d1d0ad;
+    -fx-text-fill: #f2efd9;
+}
+.outline-button:pressed { -fx-background-color: #363c2c; }
+.night-screen {
+    -fx-background-color: radial-gradient(center 50% 45%, radius 65%, #10150f, #030403);
+}
+.night-heading { -fx-font-size: 46px; -fx-text-fill: #d0d1bf; }
+.night-time { -fx-font-size: 70px; -fx-text-fill: #eeeddf; }
