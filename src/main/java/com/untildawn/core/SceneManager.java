@@ -58,7 +58,7 @@ public final class SceneManager implements AutoCloseable {
         NightController controller = loader.getController();
         replaceScreen(root, () -> {
         });
-        controller.configure(NightDefinition.SINGLE_NIGHT, this::showLobby);
+        controller.configure(GameSession.createSingleNight(), this::showLobby);
     }
 
     private FXMLLoader loader(String resource) {
